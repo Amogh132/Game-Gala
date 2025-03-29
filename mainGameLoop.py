@@ -1,5 +1,6 @@
 import time
 import random
+import Mobs
 
 usermame = ""
 health = 0
@@ -30,7 +31,16 @@ def userDetails(username, health, strength, agility, luck, shield):
         print("Nice try cheating lil bro, rerun the code.") #we are gonna change this later
     else:
         playerstats[1] = playerstats[1] * 5
-
+def mobs():
+    choice = input("Are you ready for the enemy? y or n: ")
+    if choice == "y":
+        print("ok")
+        enemy = Mobs.spawn_enemy()
+        Mobs.display_enemy(enemy)
+        print("Good Luck Bud")
+    else:
+        print("Invalid Choice.")
+    choice = input("Are you ready for the enemy? y or n: ")
 
 
 

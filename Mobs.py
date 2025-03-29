@@ -24,14 +24,6 @@ def display_enemy(self):
   print(f"Attack: {self.attack}")
 
 
-choice = input("Are you ready for the enemy? y or n: ")
-if choice == "y":
-  print("ok")
-  enemy = spawn_enemy()
-  display_enemy(enemy)
-  print("Good Luck Bud")
-else:
-  print("Invalid Choice.")
-  choice = input("Are you ready for the enemy? y or n: ")
+
 
 
