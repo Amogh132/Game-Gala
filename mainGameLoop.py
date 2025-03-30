@@ -1,5 +1,6 @@
 import time
 import sys
+from Mobs import enemy_template, Mob, enemy_encounter
 
 
 # Typing animation function
@@ -21,7 +22,9 @@ shield = 0
 playerCheating = True
 playerDead = False
 gameMode = ""
-
+mobDict = {mob.name: mob for mob in enemy_template}
+currMob = mobDict.get("Alien")
+enemy_encounter()
 
 # Game start loop
 while playerDead == False:
@@ -86,7 +89,7 @@ while playerDead == False:
     if gameMode == "easy":
         print("You begin in a bustling city on Mars, receiving a secretive message from an anonymous source urging you to investigate an abandoned research station on a forgotten moon.")
         time.sleep(2)
-        typing_animation("Traveling....", delay=1)
+        typing_animation("Traveling....", delay=0.1)
 
         # Future game actions would go here, such as combat or investigation choices
         print("You arrive at the moon. It looks eerie, with ruins scattered across the surface. The research station seems abandoned, but something feels off...")
