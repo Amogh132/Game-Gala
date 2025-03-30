@@ -24,29 +24,6 @@ enemy_template = [
     Mob("Turret", 27, 14),
 ]
 
-def spawn_enemy():
-    """Selects and returns a random enemy"""
-    return random.choice(enemy_template)
-
-def display_enemy(enemy):
-    """Outputs the enemy stats"""
-    print(f"Name: {enemy.name}")
-    print(f"Health: {enemy.health}")
-    print(f"Attack: {enemy.attack}")
-
+# Add this function to randomly select an enemy
 def enemy_encounter():
-    """Handles enemy encounter logic"""
-    while True:
-        choice = input("Are you ready for the enemy? (y/n): ").strip().lower()
-        
-        if choice == "y":
-            print("\nAn enemy is approaching...\n")
-            enemy = spawn_enemy()
-            display_enemy(enemy)
-            print("\nGood luck!\n")
-            break
-        elif choice == "n":
-            print("\nCome back when you're ready!\n")
-            break
-        else:
-            print("Invalid choice. Please enter 'y' or 'n'.")
+    return random.choice(enemy_template)

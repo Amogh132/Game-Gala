@@ -20,7 +20,7 @@ def battle_loop(player_health, player_strength, player_agility, player_shield, e
             print(f"\nYou attack the {enemy.name} for {damage} damage!\n")
 
         elif action == "d":
-            blocked_damage = player_shield + random.randint(1, 3)
+            blocked_damage = player_shield + random.randint(1, 3)    
             print(f"\nYou brace yourself, preparing to absorb {blocked_damage} damage.\n")
 
         elif action == "o":
