@@ -81,7 +81,7 @@ def get_random_weapon():
         weights=[w.drop_chance for w in weapon_types],
         k=1
     )[0]
-# Add these new functions to Mobs.py
+
 def get_infinite_enemy(level):
     base_enemies = [
         Mob("Hive Drone", 15, 50),
@@ -116,3 +116,13 @@ def get_random_weapon(level=1):
         Weapon("Light Grenade", 15 + level*3, 0.03)
     ]
     return random.choices(weapons, weights=[w.drop_chance for w in weapons])[0]
+
+
+
+def apply_class_bonuses(player_stats, player_class):
+    """Apply class bonuses to player stats"""
+    player_stats['health'] += player_class.base_health
+    player_stats['strength'] += player_class.base_attack
+    player_stats['agility'] += player_class.base_agility
+    player_stats['shield'] += player_class.base_shield
+    return player_stats
