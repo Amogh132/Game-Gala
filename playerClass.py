@@ -1,16 +1,20 @@
-#Making Player Classes
+class PlayerClass:
+    def __init__(self, name, base_health, base_attack, base_agility, base_shield, special_ability):
+        self.name = name
+        self.base_health = base_health
+        self.base_attack = base_attack
+        self.base_agility = base_agility
+        self.base_shield = base_shield
+        self.special_ability = special_ability
 
-class Player:
-  def __init__(self , className, uniqueSkills1, uniqueSkills2, uniqueSkills3, uniqueSkills4):
-    self.className = className
-    self.uniqueSkills1 = uniqueSkills1
-    self.uniqueSkills2 = uniqueSkills2
-    self.uniqueSkills3 = uniqueSkills3
-    self.uniqueSkills4 = uniqueSkills4
+# Define classes
+classes = {
+    "Giant": PlayerClass("Giant", 150, 25, 10, 15, "Crush"),
+    "Tank": PlayerClass("Tank", 200, 15, 5, 25, "Barrier"),
+    "Speedster": PlayerClass("Speedster", 100, 20, 30, 10, "Dash"),
+    "Warrior": PlayerClass("Warrior", 120, 30, 15, 15, "Berserk"),
+    "Gambler": PlayerClass("Gambler", 110, 15, 15, 15, "Jackpot")
+}
 
-giant = Player("Giant", 5, 4, 5, "Heal") # when making player classes follow this template
-tank = Player("Tank", 3, 6, 5, "Barrier")
-speedster = Player("Speedster", 4, 3, 7, "Sprint") # Idk if we want that to be a dash instead
-warrior = Player("Warrior", 6, 4, 4, "Beserk")
-gambler = Player("Gambler", 4, 4, 4, "Spin") # We could change that to another word for the skill, like gamble or smt
-
+def get_class_stats(class_name):
+    return classes.get(class_name, classes["Warrior"])  # Default to Warrior if invalid
