@@ -84,10 +84,10 @@ def get_random_weapon():
 
 def get_infinite_enemy(level):
     base_enemies = [
-        Mob("Hive Drone", 15, 50),
-        Mob("War Cyborg", 25, 80),
-        Mob("Alpha Alien", 35, 120),
-        Mob("Doom Mech", 50, 200)
+        Mob("Hive Drone", 15, 50,"infinite"),
+        Mob("War Cyborg", 25, 80,"infinite"),
+        Mob("Alpha Alien", 35, 120,"infinite"),
+        Mob("Doom Mech", 50, 200,"infinite")
     ]
     enemy = random.choice(base_enemies)
     scaled_attack = enemy.attack * (1 + (level // 7))
